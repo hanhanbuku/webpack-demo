@@ -17,3 +17,4 @@ import {createApp} from 'vue'
 console.log(createApp,Home,123)
 const app = createApp(Home).mount('#app')
 console.log(app)
+console.log(123123)
