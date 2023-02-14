@@ -1,0 +1,19 @@
+name: Docker Image CI # Actions名称
+on:
+  # 触发workflow的动作形式，这里是手动触发
+  push:
+    branches:
+    - master
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@master
+    # 安装依赖
+    - name: install
+      run: npm install
+    # 打包
+    - name: build project
+      run: npm run build
