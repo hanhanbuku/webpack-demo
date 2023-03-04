@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");//将css单独生成文件通过link引入得插件
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");//压缩css得插件
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 module.exports = {
     //入口
     entry: "./src/main.js",//相对路劲
@@ -142,8 +143,11 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename:'[name]_[contenthash:8].css'
         }),
+        //更友好的编译提示
+        new FriendlyErrorsWebpackPlugin()
     ],
     //模式
     // mode: "production",
     // devtool: "source-map"//输出源代码
+    stats: "errors-only"
 }
