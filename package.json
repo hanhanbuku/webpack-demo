@@ -4,13 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "prepare": "husky install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx webpack --mode=production",
     "watch-build": "npx webpack --watch",
     "dev": "webpack-dev-server --open --mode=development",
     "build-MPA": "npx webpack --config webpack.mulit.config.js --mode=production",
-    "dev-MPA": "webpack-dev-server --config webpack.mulit.config.js --mode=development --devtool=source-map"
+    "dev-MPA": "webpack-dev-server --config webpack.mulit.config.js --mode=development --devtool=source-map",
+    "version:major": "npm version major&&npm run changelog",
+    "version:minor": "npm version minor&&npm run changelog",
+    "version:patch": "npm version patch&&npm run changelog"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +26,7 @@
     "@commitlint/config-conventional": "^17.4.4",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^9.1.2",
+    "conventional-changelog-cli": "^2.2.2",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^4.2.2",
     "cssnano": "^5.1.14",
