@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prepare": "husky install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx webpack --mode=production",
     "watch-build": "npx webpack --watch",
@@ -17,6 +18,8 @@
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^9.1.2",
     "css-loader": "^6.7.1",
@@ -24,6 +27,7 @@
     "cssnano": "^5.1.14",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "glob": "^8.1.0",
+    "husky": "^8.0.3",
     "less": "^4.1.3",
     "less-loader": "^11.0.0",
     "optimize-css-assets-webpack-plugin": "^6.0.1",
